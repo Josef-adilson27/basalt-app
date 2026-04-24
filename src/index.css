@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+
+/* Chrome, Edge, Safari */
+.custom-scroll::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.custom-scroll::-webkit-scrollbar-track {
+  background: rgba(13, 204, 242, 0.05);
+  border-radius: 10px;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+  background: rgba(13, 204, 242, 0.4);
+  border-radius: 10px;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(13, 204, 242, 0.6);
+}
+
+/* Firefox */
+.custom-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(13, 204, 242, 0.4) rgba(13, 204, 242, 0.05);
+}
+
+body {
+  background: #101F22;
+  position: relative;
+  min-height: 100vh;
+}
+body {
+  background: #101F22;
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Градиент 1 — голубой, верхний левый */
+body::before {
+  content: '';
+  position: fixed;
+  top: -30vh;
+  left: -30vh;
+  width: 80vh;
+  height: 80vh;
+  background: radial-gradient(circle, 
+    rgba(13, 204, 242, 0.2), 
+    rgba(13, 204, 242, 0.05),
+    transparent 70%
+  );
+  border-radius: 50%;
+  filter: blur(40px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Градиент 2 — зеленый, нижний правый */
+body::after {
+  content: '';
+  position: fixed;
+  bottom: -30vh;
+  right: -30vh;
+  width: 80vh;
+  height: 80vh;
+  background: radial-gradient(circle, 
+    rgba(0, 255, 157, 0.15), 
+    rgba(0, 255, 157, 0.03),
+    transparent 70%
+  );
+  border-radius: 50%;
+  filter: blur(40px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Градиент 3 — дополнительный, центр справа */
+.gradient-extra {
+  position: fixed;
+  top: 50%;
+  right: -20vh;
+  transform: translateY(-50%);
+  width: 60vh;
+  height: 60vh;
+  background: radial-gradient(circle, 
+    rgba(13, 204, 242, 0.08), 
+    transparent 70%
+  );
+  border-radius: 50%;
+  filter: blur(50px);
+  pointer-events: none;
+  z-index: 0;
+}
